@@ -15,7 +15,7 @@
 
     <script type="text/javascript">
     function rtohome(){
-      window.location.href ="home.php";
+      window.location.href ="index.php";
     }
     function change(){
       window.location.href ="registration.php";
