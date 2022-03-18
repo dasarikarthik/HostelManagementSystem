@@ -156,7 +156,7 @@
   <div class="SocialMedia">
     <div class="SocialMediaWrap">
       <a href="#" class="SocialLogo">HMS</a>
-      <p class="WebsiteRights">Manade ee website</p>
+      <p class="WebsiteRights">VIT VELLORE © 2022</p>
       <div class="SocialIcons">
         <a href="https://www.facebook.com/vituniversity/" class="SocialIconLink"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
         <a href="https://twitter.com/VIT_univ?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" class="SocialIconLink"><i class="fa fa-twitter" aria-hidden="true"></i></a>
