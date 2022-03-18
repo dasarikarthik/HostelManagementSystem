@@ -15,7 +15,7 @@
       <h1>Login</h1>
       <form method="post">
         <div class="txt_field">
-          <input type="text" required>
+          <input type="text" pattern="[0-9]{2}[A-Z]{3}[0-9]{4}" required>
           <span></span>
           <label>Username</label>
         </div>

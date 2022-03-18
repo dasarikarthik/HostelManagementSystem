@@ -22,11 +22,11 @@
         <div class="user-details">
           <div class="input-box">
             <span class="details">Full Name</span>
-            <input type="text" placeholder="Enter your name" required>
+            <input type="text" placeholder="Enter your name" required pattern="[a-z A-Z]*">
           </div>
           <div class="input-box">
             <span class="details">Reg No</span>
-            <input type="text" placeholder="Enter your regno" required>
+            <input type="text" placeholder="Enter your regno" pattern="[0-9]{2}[A-Z]{3}[0-9]{4}" required>
           </div>
           <div class="input-box">
             <span class="details">Email</span>
@@ -34,7 +34,7 @@
           </div>
           <div class="input-box">
             <span class="details">Phone Number</span>
-            <input type="text" placeholder="Enter your number" required>
+            <input type="text" placeholder="Enter your number" pattern="[0-9]{10}" required>
           </div>
           <div class="input-box">
             <span class="details">Password</span>

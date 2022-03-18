@@ -171,15 +171,15 @@ form .user-details .input-box{
         <div class="user-details">
           <div class="input-box">
             <span class="details">Full Name</span>
-            <input type="text" placeholder="Enter your name" required>
+            <input type="text" placeholder="Enter your name" pattern="[a-z A-Z]*" required>
           </div>
           <div class="input-box">
             <span class="details">Reg No</span>
-            <input type="text" placeholder="Enter your regno" required>
+            <input type="text" placeholder="Enter your regno" pattern="[0-9]{2}[A-Z]{3}[0-9]{4}" required>
           </div>
           <div class="input-box">
             <span class="details">Block Name</span>
-            <input type="text" placeholder="Enter your block name" required>
+            <input type="text" placeholder="Enter your block name"  required>
           </div>
           <div class="input-box">
             <span class="details">Room no</span>
@@ -187,7 +187,7 @@ form .user-details .input-box{
           </div>
           <div class="input-box">
             <span class="details">Reason</span>
-            <input type="textarea" placeholder="Reason" required>
+            <input type="textarea" placeholder="Reason"s required>
           </div>
         </div>
 

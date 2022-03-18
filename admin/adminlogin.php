@@ -13,7 +13,7 @@
       <h1>Admin Login</h1>
       <form method="post">
         <div class="txt_field">
-          <input type="text" required>
+          <input type="text" pattern="[0-9]{5}" required>
           <span></span>
           <label>Employee ID</label>
         </div>

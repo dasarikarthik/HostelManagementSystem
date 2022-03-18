@@ -145,8 +145,8 @@
     <div class="FooterLinksWrapper">
         <div class="FooterLinkItems">
             <h1 class="FooterLinkTitle">About Us</h1>
-            <a href="#" class="FooterLink">About me</a>
-            <a href="#" class="FooterLink">Services</a>
+            <a href="aboutme.php" class="FooterLink">Developers</a>
+            <a href="#about" class="FooterLink">Services</a>
             <a href="pricing.php" class="FooterLink">Pricing</a>
             <a href="admin\adminlogin.php" class="FooterLink">Admin</a>
         </div>
