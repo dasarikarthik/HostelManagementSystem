@@ -6,7 +6,7 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <script type="text/javascript">
        function back(){
-         window.location.href ="home.php";
+         window.location.href ="index.php";
        }
        function register(){
          window.location.href ="student/mhregistration.php";

@@ -146,7 +146,7 @@ window.location.href ="admindashboard.php";
 
       }
       function logout(){
-        window.location.href ="../home.php";
+        window.location.href ="../index.php";
       }
     </script>
   </head>

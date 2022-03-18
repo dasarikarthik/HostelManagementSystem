@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css\signin.css">
     <script type="text/javascript">
       function back(){
-        window.location.href ="home.php";
+        window.location.href ="index.php";
       }
     </script>
   </head>

@@ -10,7 +10,7 @@
         window.location.href ="registration.php";
       }
       function rtohome(){
-        window.location.href ="home.php";
+        window.location.href ="index.php";
       }
     </script>
   </head>
@@ -23,9 +23,9 @@
         <i class="fa fa-bars"></i>
         </div>
         <ul class="NavMenu ">
-          <li class="NavItem"><a id="linkcolor" on class="NavLinks" href="home.php#about">About</a></li>
+          <li class="NavItem"><a id="linkcolor" on class="NavLinks" href="index.php#about">About</a></li>
           <li class="NavItem"><a id="linkcolor1" class="NavLinks" href="pricing.php">Pricing</a></li>
-          <li class="NavItem"><a id="linkcolor2" class="NavLinks" href="home.php#contact">Contact Us</a></li>
+          <li class="NavItem"><a id="linkcolor2" class="NavLinks" href="index.php#contact">Contact Us</a></li>
           <li class="NavItem"><a id="linkcolor3" class="NavLinks" href="signin.php">Sign in</a></li>
         </ul>
         <div class="NavBtn">
