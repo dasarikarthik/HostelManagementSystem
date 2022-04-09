@@ -84,7 +84,7 @@
 <li>Gym</li>
 <li>Swimming pool</li>
 <li>AC Gym</li>
-<li class="grey"><a href="signinphp" class="button">Select</a></li>
+<li class="grey"><a href="signin.php" class="button">Select</a></li>
 </ul>
 </div>
 

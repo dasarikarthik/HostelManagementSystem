@@ -23,7 +23,9 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <!-- about -->
+
 <?php include '../header.php';?>
+
 
 <!-- end about -->
 <div class="wrapper">

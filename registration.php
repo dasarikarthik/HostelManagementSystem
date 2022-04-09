@@ -15,40 +15,40 @@
    </head>
   <link rel="stylesheet" href="css\resgistration.css">
 <body>
+  <?php       session_start(); ?>
   <div class="container">
     <div class="title">Registration</div>
     <div class="content">
-      <form action="#">
+      <form action="connect.php"   method="post">
         <div class="user-details">
           <div class="input-box">
             <span class="details">Full Name</span>
-            <input type="text" placeholder="Enter your name" required pattern="[a-z A-Z]*">
+            <input name="name" type="text" placeholder="Enter your name" required pattern="[a-z A-Z]*">
           </div>
           <div class="input-box">
             <span class="details">Reg No</span>
-            <input type="text" placeholder="Enter your regno" pattern="[0-9]{2}[A-Z]{3}[0-9]{4}" required>
+            <input type="text" placeholder="Enter your regno" name="regno" pattern="[0-9]{2}[A-Z]{3}[0-9]{4}" required>
           </div>
           <div class="input-box">
             <span class="details">Email</span>
-            <input type="text" placeholder="Enter your email" required>
+            <input type="text" placeholder="Enter your email" name="email" required>
           </div>
           <div class="input-box">
             <span class="details">Phone Number</span>
-            <input type="text" placeholder="Enter your number" pattern="[0-9]{10}" required>
+            <input type="text" placeholder="Enter your number" name="phoneno" pattern="[0-9]{10}" required>
           </div>
           <div class="input-box">
             <span class="details">Password</span>
-            <input type="text" placeholder="Enter your password" required>
+            <input type="text" placeholder="Enter your password" name="password" required>
           </div>
           <div class="input-box">
             <span class="details">Confirm Password</span>
-            <input type="text" placeholder="Confirm your password" required>
+            <input type="text" placeholder="Confirm your password" name="confirmpassword" required>
           </div>
         </div>
         <div class="gender-details">
-          <input type="radio" name="gender" id="dot-1">
-          <input type="radio" name="gender" id="dot-2">
-          <input type="radio" name="gender" id="dot-3">
+          <input type="radio" name="gender" id="dot-1" value="male">
+          <input type="radio" name="gender" id="dot-2" value="female">
           <span class="gender-title">Gender</span>
           <div class="category">
             <label for="dot-1">
@@ -64,7 +64,7 @@
         </div>
         <div class="button">
           <input type="submit" value="Go Back" onclick="back()">
-          <input type="submit" value="Register" style="margin-left:85px;" onclick="register()">
+          <input type="submit" value="Register" name="submit" style="margin-left:85px;" onclick="register()">
         </div>
       </form>
     </div>

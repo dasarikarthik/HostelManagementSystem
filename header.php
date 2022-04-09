@@ -147,6 +147,7 @@ window.location.href ="studentdashboard.php";
       }
       function logout(){
         window.location.href ="../index.php";
+
       }
     </script>
   </head>
@@ -157,6 +158,7 @@ window.location.href ="studentdashboard.php";
         <div class="MobileIcon">
         <i class="fa fa-bars"></i>
         </div>
+    
         <!-- <ul class="NavMenu ">
           <li class="NavItem"><a id="linkcolor" on class="NavLinks" href="#about">About</a></li>
           <li class="NavItem"><a id="linkcolor1" class="NavLinks" href="pricing.html">Pricing</a></li>

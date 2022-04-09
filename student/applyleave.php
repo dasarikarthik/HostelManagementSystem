@@ -8,194 +8,121 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
    <script type="text/javascript">
-     function apply(){
-  window.location.href ="applyleave.php";
-     }
+
      function goback(){
          window.location.href ="studentdashboard.php";
      }
    </script>
-   <style>
-   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins',sans-serif;
+<link rel="stylesheet" href="..\css\applyleave.css">
+
+<?php       session_start(); ?>
+<?php
+
+  $regno = $_SESSION['regno'];
+  require_once('../dbConnect.php');
+  $sql="SELECT name,block,roomno FROM users WHERE regno='$regno';";
+  $query1=mysqli_query($conn,$sql);
+  $row = mysqli_fetch_assoc($query1);
+  $name=$row['name'];
+  $block=$row['block'];
+  $roomno=$row['roomno'];
+$errmsg="";
+$sucmsg="";
+// $result=mysqli_query($conn,"SELECT count($regno) as total from leave where regno='$regno' AND status='Pending';");
+// $data=mysqli_fetch_assoc($result);
+// $count= $data['total'];
+
+
+ ?>
+
+
+ <?php
+ if($_SERVER["REQUEST_METHOD"]=="POST"){
+ if( isset($_POST['fromdate']) && isset($_POST['todate']) && isset($_POST['reason']) ){
+
+ $fromdate=$_POST['fromdate'];
+ $todate=$_POST['todate'];
+ $reason=$_POST['reason'];
+ date_default_timezone_set('Asia/Kolkata');
+ $date = date('d-m-y');
+ list($pday, $pmonth, $pyear) = explode('-', $date);
+list($year1, $month1, $day1) = explode('-', $fromdate);
+list($year2, $month2, $day2) = explode('-', $todate);
+
+$sql = "SELECT * FROM leaverequests WHERE regno='$regno' AND status='Pending'";
+if ($result=mysqli_query($conn,$sql)) {
+    $count=mysqli_num_rows($result);
+
 }
-body{
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-    background: linear-gradient(120deg,#00467F, #A5CC82);
+
+if($month2<$month1 || $day2<$day1 || $day1<$pday || $day2<$pday || $month1<$pmonth || $month2<$pmonth ){
+$errmsg="*You entered wrong information";
 }
-.container{
-  max-width: 700px;
-  width: 100%;
-  background-color: #fff;
-  padding: 25px 30px;
-  border-radius: 5px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
-}
-.container .title{
-  font-size: 25px;
-  font-weight: 500;
-  position: relative;
-}
-.container .title::before{
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 3px;
-  width: 30px;
-  border-radius: 5px;
-  background: linear-gradient(135deg, #71b7e6, #9b59b6);
-}
-.content form .user-details{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 20px 0 12px 0;
-}
-form .user-details .input-box{
-  margin-bottom: 15px;
-  width: calc(100% / 2 - 20px);
-}
-form .input-box span.details{
-  display: block;
-  font-weight: 500;
-  margin-bottom: 5px;
-}
-.user-details .input-box input{
-  height: 45px;
-  width: 100%;
-  outline: none;
-  font-size: 16px;
-  border-radius: 5px;
-  padding-left: 15px;
-  border: 1px solid #ccc;
-  border-bottom-width: 2px;
-  transition: all 0.3s ease;
-}
-.user-details .input-box input:focus,
-.user-details .input-box input:valid{
-  border-color: #01BF71;
-}
- form .gender-details .gender-title{
-  font-size: 20px;
-  font-weight: 500;
- }
- form .category{
-   display: flex;
-   width: 80%;
-   margin: 14px 0 ;
-   justify-content: space-between;
- }
- form .category label{
-   display: flex;
-   align-items: center;
-   cursor: pointer;
- }
- form .category label .dot{
-  height: 18px;
-  width: 18px;
-  border-radius: 50%;
-  margin-right: 10px;
-  background: #d9d9d9;
-  border: 5px solid transparent;
-  transition: all 0.3s ease;
-}
- #dot-1:checked ~ .category label .one,
- #dot-2:checked ~ .category label .two,
- #dot-3:checked ~ .category label .three{
-   background: #01BF71;
-   border-color: #d9d9d9;
- }
- form input[type="radio"]{
-   display: none;
- }
- form .button{
-   height: 45px;
-   margin: 35px 0
- }
- form .button input{
-   height: 100%;
-   width: 40%;
-   border-radius: 5px;
-   border: none;
-   color: #fff;
-   font-size: 18px;
-   font-weight: 500;
-   letter-spacing: 1px;
-   cursor: pointer;
-   transition: all 0.3s ease;
-    background: linear-gradient(120deg,#00467F, #A5CC82);
- }
- form .button input:hover{
-  /* transform: scale(0.99); */
-  background: linear-gradient(-120deg,#00467F, #A5CC82);
+else{
+  if($count>=1){
+  $errmsg="*You already had a leave";
   }
- @media(max-width: 584px){
- .container{
-  max-width: 100%;
+  else{
+
+   require_once('../dbConnect.php');
+ $sql="INSERT INTO `leaverequests` (`name`,`regno`,`block`,`roomno`,`fromdate`,`todate`,`reason`,`status`)VALUES ('$name','$regno','$block','$roomno','$fromdate','$todate','$reason','Pending')";
+ $query=mysqli_query($conn,$sql);
+ if($query){
+   $sucmsg= '*Entry successful';
+ }
+ else{
+   $errmsg= "*Error occoured";
+ }
 }
-form .user-details .input-box{
-    margin-bottom: 15px;
-    width: 100%;
-  }
-  form .category{
-    width: 100%;
-  }
-  .content form .user-details{
-    max-height: 300px;
-    overflow-y: scroll;
-  }
-  .user-details::-webkit-scrollbar{
-    width: 5px;
-  }
-  }
-  @media(max-width: 459px){
-  .container .content .category{
-    flex-direction: column;
-  }
 }
-</style>
+ }
+ }
+
+
+  ?>
 <body>
   <div class="container">
     <div class="title">Registration</div>
     <div class="content">
-      <form action="#">
+      <form action="applyleave.php" method="post">
         <div class="user-details">
           <div class="input-box">
             <span class="details">Full Name</span>
-            <input type="text" placeholder="Enter your name" pattern="[a-z A-Z]*" required>
+            <input type="text" placeholder="Enter your name" pattern="[a-z A-Z]*" value="<?php echo $name; ?>" required disabled>
           </div>
           <div class="input-box">
             <span class="details">Reg No</span>
-            <input type="text" placeholder="Enter your regno" pattern="[0-9]{2}[A-Z]{3}[0-9]{4}" required>
+            <input type="text" placeholder="Enter your regno" pattern="[0-9]{2}[A-Z]{3}[0-9]{4}" value="<?php echo $regno; ?>" disabled required>
           </div>
           <div class="input-box">
             <span class="details">Block Name</span>
-            <input type="text" placeholder="Enter your block name"  required>
+            <input type="text" placeholder="Enter your block name" value="<?php echo $block; ?>" disabled required>
           </div>
           <div class="input-box">
             <span class="details">Room no</span>
-            <input type="number" placeholder="Enter your room " required>
+            <input type="number" placeholder="Enter your room " value="<?php echo $roomno; ?>" disabled required>
+          </div>
+          <div class="input-box">
+            <span class="details">From</span>
+            <input type="date" name="fromdate" id="fromdate" placeholder="Enter from date " required>
+          </div>
+          <div class="input-box">
+            <span class="details">To</span>
+            <input type="date" name="todate" id="todate" placeholder="Enter to date"  required>
           </div>
           <div class="input-box">
             <span class="details">Reason</span>
-            <input type="textarea" placeholder="Reason"s required>
+            <input type="textarea" name="reason" id="reason" placeholder="Reason"  required>
           </div>
         </div>
 
         <div class="button">
-          <input type="submit" value="Go Back" onclick="goback()">
-          <input type="submit" value="Apply" style="margin-left:85px;" onclick="apply()">
+          <input type="button" value="Go Back" onclick="goback()">
+          <input type="submit" name="submit" style="margin-left:85px;" >
         </div>
       </form>
+      <span style="color: red;"><?php echo $errmsg; ?></span>
+        <span style="color: green;"><?php echo $sucmsg; ?></span>
     </div>
   </div>
 

@@ -146,8 +146,8 @@
 </style>
 
 <script type="text/javascript">
-function addrooms(){
-  window.location.href ="addroom.php";
+function studentsearch(){
+  window.location.href ="studentsearch.php";
 }
 function requests(){
   window.location.href ="leaverequests.php";
@@ -178,10 +178,10 @@ function roomdetails(){
       <!-- end card -->
 
       <!-- card -->
-      <div class="card" onclick="addrooms()">
+      <div class="card" onclick="studentsearch()">
 
             <div class="icon"><i class="material-icons md-36">add</i></div>
-            <p class="title">Add Rooms</p>
+            <p class="title">Student Search</p>
             <p class="text">Click to see or edit your profile page.</p>
 
       </div>

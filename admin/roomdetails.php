@@ -104,29 +104,96 @@ only screen and (max-width: 760px),
 
 }
 </style>
+<?php
+
+  require_once('../dbConnect.php');
+  $sql="SELECT name,regno,email,phoneno,block,roomno FROM users WHERE gender='male';";
+    // $sql="SELECT regno,name,email,phoneno,block,roomno FROM users WHERE ";
+  $query=mysqli_query($conn,$sql);
+
+
+ ?>
 </head>
   <body>
     <?php include 'header.php';?>
   <table>
   <thead>
     <tr>
-        <th>Room no</th>
+      <th style="text-align: center;" colspan="6">Male</th>
+    </tr>
+    <tr>
       <th>Reg No</th>
       <th>Name</th>
+      <th>Phone no</th>
+      <th>Email</th>
       <th>Block</th>
-
+      <th>Room no</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-        <td data-column="Room no" >001 </td>
-      <td data-column="Reg No">19MIS0354</td>
-      <td data-column="Name">Gowtham</td>
-      <td data-column="Block">Q block</td>
 
-    </tr>
+
+      		<?php while($rows=mysqli_fetch_assoc($query))
+      		{
+      		?>
+      		<tr> <td><?php echo $rows['regno']; ?></td>
+      		<td><?php echo $rows['name']; ?></td>
+      		<td><?php echo $rows['phoneno']; ?></td>
+      		<td><?php echo $rows['email']; ?></td>
+          	<td><?php echo $rows['block']; ?></td>
+            	<td><?php echo $rows['roomno']; ?></td>
+      		</tr>
+      	<?php
+                     }
+                ?>
+
 
   </tbody>
+</table>
+<!--
+female -->
+<?php
+
+  require_once('../dbConnect.php');
+  $sql="SELECT name,regno,email,phoneno,block,roomno FROM users WHERE gender='female';";
+    // $sql="SELECT regno,name,email,phoneno,block,roomno FROM users WHERE ";
+  $query=mysqli_query($conn,$sql);
+
+
+ ?>
+<table>
+<thead>
+  <tr>
+    <th style="text-align: center;" colspan="6">female</th>
+  </tr>
+  <tr>
+    <th>Reg No</th>
+    <th>Name</th>
+    <th>Phone no</th>
+    <th>Email</th>
+    <th>Block</th>
+    <th>Room no</th>
+  </tr>
+</thead>
+<tbody>
+
+
+        <?php while($rows=mysqli_fetch_assoc($query))
+        {
+        ?>
+        <tr> <td><?php echo $rows['regno']; ?></td>
+        <td><?php echo $rows['name']; ?></td>
+        <td><?php echo $rows['phoneno']; ?></td>
+        <td><?php echo $rows['email']; ?></td>
+          <td><?php echo $rows['block']; ?></td>
+            <td><?php echo $rows['roomno']; ?></td>
+        </tr>
+      <?php
+                   }
+              ?>
+
+
+</tbody>
 </table>
 
 
