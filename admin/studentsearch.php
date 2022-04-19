@@ -186,7 +186,7 @@ td:before {
 <form class="" action="studentsearch.php" method="post">
 <div class="wrapper">
 	<div class="search_box">
-		<input type="text" name="regno" id="regno" class="input_search" placeholder="Enter student regno">
+		<input type="text" name="regno" id="regno" class="input_search" placeholder="Enter student regno" pattern="[0-9]{2}[A-Z]{3}[0-9]{4}">
     <div class="search_btn"><input class="btn"  type="submit" name="submit" value="find"> </div>
 <!--
     <i type="submit" name="submit" class="fas fa-search"></i> -->
