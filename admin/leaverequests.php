@@ -11,7 +11,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Encode Sans Expanded",sans-serif;
+   font-family: helvetica;
   }
 table {
 	width: 750px;
@@ -136,7 +136,6 @@ only screen and (max-width: 760px),
       function approve() {
         $conn= mysqli_connect('localhost','root','','hms') or die("Connection failed:" .mysqli_connect_error());
         $regno1=$_POST['id'];
-        echo $regno1;
         $sql1="UPDATE `leaverequests` SET `status`='approved' where regno='$regno1'";
         $query1=mysqli_query($conn,$sql1);
         if($query1){

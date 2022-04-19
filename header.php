@@ -150,6 +150,12 @@ window.location.href ="studentdashboard.php";
 
       }
     </script>
+    <?php
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+     $regno= $_SESSION['regno'];
+     ?>
   </head>
   <body>
     <div class="Nav" id="Nav1">
@@ -158,7 +164,9 @@ window.location.href ="studentdashboard.php";
         <div class="MobileIcon">
         <i class="fa fa-bars"></i>
         </div>
-    
+    <ul class="NavMenu ">
+      <li style="color:white;padding-top:30px; margin-left:250px;" class="NavItem"><?php echo "Welcome $regno"; ?></li>
+    </ul>
         <!-- <ul class="NavMenu ">
           <li class="NavItem"><a id="linkcolor" on class="NavLinks" href="#about">About</a></li>
           <li class="NavItem"><a id="linkcolor1" class="NavLinks" href="pricing.html">Pricing</a></li>

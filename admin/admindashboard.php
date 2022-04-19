@@ -161,7 +161,7 @@ function roomdetails(){
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <!-- about -->
-<?php include '../header.php';?>
+<?php include 'header.php';?>
 
 <!-- end about -->
 <div class="wrapper">
@@ -172,7 +172,7 @@ function roomdetails(){
 
             <div class="icon"><i class="material-icons md-36" >search</i></div>
             <p class="title">Room details</p>
-            <p class="text">Click to see or edit your profile page.</p>
+            <p class="text">Check all student room details.</p>
 
       </div>
       <!-- end card -->
@@ -182,7 +182,7 @@ function roomdetails(){
 
             <div class="icon"><i class="material-icons md-36">add</i></div>
             <p class="title">Student Search</p>
-            <p class="text">Click to see or edit your profile page.</p>
+            <p class="text">Search for a student .</p>
 
       </div>
       <!-- end card -->
@@ -192,7 +192,7 @@ function roomdetails(){
 
             <div class="icon"><i class="material-icons md-36">description</i></div>
             <p class="title">Leave Requests</p>
-            <p class="text">Click to see or edit your profile page.</p>
+            <p class="text">Approve or reject leave requests.</p>
 
       </div>
       <!-- end card -->

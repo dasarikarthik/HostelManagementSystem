@@ -62,6 +62,21 @@ border: 1px solid #ccc;
 border-bottom-width: 2px;
 transition: all 0.3s ease;
 }
+form .file-box span.details{
+display: block;
+font-weight: 500;
+margin-bottom: 5px;
+}
+.user-details .file-box input{
+height: 45px;
+width: 100%;
+outline: none;
+font-size: 16px;
+border-radius: 5px;
+padding-left: 15px;
+border-bottom-width: 2px;
+transition: all 0.3s ease;
+}
 .user-details .input-box input:focus,
 .user-details .input-box input:valid{
 border-color: #01BF71;

@@ -21,6 +21,9 @@ if(isset($_POST["qblock"])){
   $rowSQL = mysqli_query($conn, "SELECT MAX( roomno ) AS max FROM `users` WHERE block='$blockname' AND gender='male';" );
   $row = mysqli_fetch_array( $rowSQL );
   $largestNumber = $row['max'];
+  if($largestNumber==0){
+    $largestNumber=1;
+  }
   $result=mysqli_query($conn,"SELECT count($largestNumber) as total from users where block='$blockname' AND gender='male';");
 $data=mysqli_fetch_assoc($result);
 $count= $data['total'];
@@ -36,6 +39,9 @@ if(isset($_POST["jblock"])){
   $rowSQL = mysqli_query($conn, "SELECT MAX( roomno ) AS max FROM `users` WHERE block='$blockname' AND gender='male';" );
   $row = mysqli_fetch_array( $rowSQL );
   $largestNumber = $row['max'];
+  if($largestNumber==0){
+    $largestNumber=1;
+  }
   $result=mysqli_query($conn,"SELECT count($largestNumber) as total from users where block='$blockname' AND gender='male';");
 $data=mysqli_fetch_assoc($result);
 $count= $data['total'];
@@ -51,6 +57,9 @@ if(isset($_POST["hblock"])){
   $rowSQL = mysqli_query($conn, "SELECT MAX( roomno ) AS max FROM `users` WHERE block='$blockname' AND gender='male';" );
   $row = mysqli_fetch_array( $rowSQL );
   $largestNumber = $row['max'];
+  if($largestNumber==0){
+    $largestNumber=1;
+  }
   $result=mysqli_query($conn,"SELECT count($largestNumber) as total from users where block='$blockname' AND gender='male';");
 $data=mysqli_fetch_assoc($result);
 $count= $data['total'];
@@ -66,6 +75,9 @@ if(isset($_POST["kblock"])){
   $rowSQL = mysqli_query($conn, "SELECT MAX( roomno ) AS max FROM `users` WHERE block='$blockname' AND gender='male';" );
   $row = mysqli_fetch_array( $rowSQL );
   $largestNumber = $row['max'];
+  if($largestNumber==0){
+    $largestNumber=1;
+  }
   $result=mysqli_query($conn,"SELECT count($largestNumber) as total from users where block='$blockname' AND gender='male';");
 $data=mysqli_fetch_assoc($result);
 $count= $data['total'];
@@ -81,6 +93,9 @@ if(isset($_POST["ablock"])){
   $rowSQL = mysqli_query($conn, "SELECT MAX( roomno ) AS max FROM `users` WHERE block='$blockname' AND gender='male';" );
   $row = mysqli_fetch_array( $rowSQL );
   $largestNumber = $row['max'];
+  if($largestNumber==0){
+    $largestNumber=1;
+  }
   $result=mysqli_query($conn,"SELECT count($largestNumber) as total from users where block='$blockname' AND gender='male';");
 $data=mysqli_fetch_assoc($result);
 $count= $data['total'];
@@ -96,6 +111,9 @@ if(isset($_POST["bblock"])){
   $rowSQL = mysqli_query($conn, "SELECT MAX( roomno ) AS max FROM `users` WHERE block='$blockname' AND gender='male';" );
   $row = mysqli_fetch_array( $rowSQL );
   $largestNumber = $row['max'];
+  if($largestNumber==0){
+    $largestNumber=1;
+  }
   $result=mysqli_query($conn,"SELECT count($largestNumber) as total from users where block='$blockname' AND gender='male';");
 $data=mysqli_fetch_assoc($result);
 $count= $data['total'];
@@ -112,6 +130,9 @@ if(isset($_POST["cblock"])){
   $rowSQL = mysqli_query($conn, "SELECT MAX( roomno ) AS max FROM `users` WHERE block='$blockname' AND gender='male';" );
   $row = mysqli_fetch_array( $rowSQL );
   $largestNumber = $row['max'];
+  if($largestNumber==0){
+    $largestNumber=1;
+  }
   $result=mysqli_query($conn,"SELECT count($largestNumber) as total from users where block='$blockname' AND gender='male';");
 $data=mysqli_fetch_assoc($result);
 $count= $data['total'];
@@ -127,6 +148,9 @@ if(isset($_POST["dblock"])){
   $rowSQL = mysqli_query($conn, "SELECT MAX( roomno ) AS max FROM `users` WHERE block='$blockname' AND gender='male';" );
   $row = mysqli_fetch_array( $rowSQL );
   $largestNumber = $row['max'];
+  if($largestNumber==0){
+    $largestNumber=1;
+  }
   $result=mysqli_query($conn,"SELECT count($largestNumber) as total from users where block='$blockname' AND gender='male';");
 $data=mysqli_fetch_assoc($result);
 $count= $data['total'];

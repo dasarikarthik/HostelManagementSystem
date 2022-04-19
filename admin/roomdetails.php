@@ -11,7 +11,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Encode Sans Expanded",sans-serif;
+   font-family: helvetica;
   }
 table {
 	width: 750px;

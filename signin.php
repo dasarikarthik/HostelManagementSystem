@@ -10,7 +10,9 @@
       }
     </script>
   <?php
+    $errmsg="";
   if ($_SERVER['REQUEST_METHOD']=='POST'){
+
        session_start();
   $username = $_POST['username'];
   $password = $_POST['password'];
@@ -25,7 +27,7 @@
   }
 
   else{
-  echo 'failure';
+  $errmsg="*Username or password is wrong";
   }
   }
 
@@ -39,7 +41,7 @@
         <div class="txt_field">
           <input name="username" type="text" pattern="[0-9]{2}[A-Z]{3}[0-9]{4}" required>
           <span></span>
-          <label>Username</label>
+          <label>Regno</label>
         </div>
         <div class="txt_field">
           <input name="password" type="password" required>
@@ -52,6 +54,7 @@
         <div class="signup_link">
           Not a member? <a href="registration.php">Signup</a>
         </div>
+        <span style="color:red "><?php echo "$errmsg"; ?></span>
       </form>
     </div>
 
