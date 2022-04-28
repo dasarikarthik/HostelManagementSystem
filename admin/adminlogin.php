@@ -5,7 +5,7 @@
     <title>Admin login</title>
     <link rel="stylesheet" href="..\css\signin.css">
     <?php
-
+$errmsg="";
     if ($_SERVER['REQUEST_METHOD']=='POST'){
          session_start();
     $employeeid = $_POST['employeeid'];
@@ -21,7 +21,7 @@
     }
 
     else{
-    echo 'failure';
+    $errmsg="*Username or password is wrong";
     }
     }
 
@@ -45,9 +45,10 @@
         <div class="pass">Forgot Password?</div>
         <input type="submit" name="submit" id="submit" value="submit">
         <div class="signup_link">
-          Forgot? <a href="signup.html">Contact</a>
+          Forgot? <a href="#">Contact</a>
         </div>
       </form>
+        <span style="color:red;margin-left: 15px;"><?php echo "$errmsg"; ?></span>
     </div>
 
   </body>

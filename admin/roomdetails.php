@@ -116,6 +116,10 @@ only screen and (max-width: 760px),
 </head>
   <body>
     <?php include 'header.php';?>
+    <?php
+    if(mysqli_num_rows($query)>0){
+     ?>
+
   <table>
   <thead>
     <tr>
@@ -150,15 +154,19 @@ only screen and (max-width: 760px),
 
   </tbody>
 </table>
-<!--
-female -->
+<?php
+}
+else{
+  echo "<h3 style='text-align: center;'>No Male Students Registered</h3>";
+}
+ ?>
 <?php
 
   require_once('../dbConnect.php');
   $sql="SELECT name,regno,email,phoneno,block,roomno FROM users WHERE gender='female';";
     // $sql="SELECT regno,name,email,phoneno,block,roomno FROM users WHERE ";
   $query=mysqli_query($conn,$sql);
-
+if(mysqli_num_rows($query)>0){
 
  ?>
 <table>
@@ -196,7 +204,12 @@ female -->
 </tbody>
 </table>
 
-
+<?php
+}
+else{
+  echo "<h3 style='text-align: center;'>No Female Students Registered</h3>";
+}
+ ?>
 
   </body>
 </html>
