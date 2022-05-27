@@ -36,7 +36,7 @@ To deploy this project follow these steps:
 ```
 
 
-## Yotube Link
+## Youtube Link
 
 https://www.youtube.com/watch?v=DLzCSq4Ci44
 ## Lessons Learned
